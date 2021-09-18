@@ -12,7 +12,7 @@ enum Command
 };
 
 /**
- * @function Get one of the commands (get, post, patch, delete, put) from cin input.
+ * @function Get one of the commands (get, post, patch, delete, put, ext) from cin input.
  * Returns the Command or error message.
  * @return Command
  */

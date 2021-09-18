@@ -11,6 +11,11 @@ enum Command
     EXIT
 };
 
+/**
+ * @function Get one of the commands (get, post, patch, delete, put) from cin input.
+ * Returns the Command or error message.
+ * @return Command
+ */
 Command getCommand()
 {
     while (true)
@@ -36,7 +41,6 @@ Command getCommand()
 }
 
 int main() {
-
     bool isOngoing = true;
     while (isOngoing)
     {
@@ -48,19 +52,19 @@ int main() {
                 r = cpr::Get(cpr::Url("http://httpbin.org/get"));
                 break;
             case POST:
-                r = cpr::Get(cpr::Url("http://httpbin.org/post"));
+                r = cpr::Post(cpr::Url("http://httpbin.org/post"));
                 break;
             case PUT:
-                r = cpr::Get(cpr::Url("http://httpbin.org/put"));
+                r = cpr::Put(cpr::Url("http://httpbin.org/put"));
                 break;
             case DELETE:
-                r = cpr::Get(cpr::Url("http://httpbin.org/delete"));
+                r = cpr::Delete(cpr::Url("http://httpbin.org/delete"));
                 break;
             case PATCH:
-                r = cpr::Get(cpr::Url("http://httpbin.org/patch"));
+                r = cpr::Patch(cpr::Url("http://httpbin.org/patch"));
                 break;
             case EXIT:
-                r.text = "Exit\n";
+                r.text = "Exiting the program...\n";
                 isOngoing = false;
                 break;
         }

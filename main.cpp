@@ -33,7 +33,7 @@ Command getCommand()
             return DELETE;
         else if (buffer == "patch")
             return PATCH;
-        else if (buffer == "exit")
+        else if (buffer == "ext")
             return EXIT;
         else
             std::cerr << "Unknown command. Try again.\n";
